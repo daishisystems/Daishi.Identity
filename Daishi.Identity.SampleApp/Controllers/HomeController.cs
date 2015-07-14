@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿#region Includes
+
+using System.Security.Claims;
 using System.Web.Mvc;
 
-namespace Daishi.Identity.SampleApp.Controllers
-{
-    public class HomeController : Controller
-    {
-        public ActionResult Index()
-        {
+#endregion
+
+namespace Daishi.Identity.SampleApp.Controllers {
+    public class HomeController : Controller {
+        public ActionResult Index() {
             return View();
         }
 
-        public ActionResult About()
-        {
+        [Authorize]
+        public ActionResult About() {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View((User as ClaimsPrincipal).Claims);
         }
 
-        public ActionResult Contact()
-        {
+        public ActionResult Contact() {
             ViewBag.Message = "Your contact page.";
 
             return View();

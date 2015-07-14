@@ -17,7 +17,7 @@ namespace Daishi.Identity.SampleApp {
                     Subject = "1",
                     Claims = new[] {
                         new Claim(Constants.ClaimTypes.GivenName, "Bob"),
-                        new Claim(Constants.ClaimTypes.FamilyName, "Smith")
+                        new Claim(Constants.ClaimTypes.FamilyName, "Smith")                       
                     }
                 }
             };
